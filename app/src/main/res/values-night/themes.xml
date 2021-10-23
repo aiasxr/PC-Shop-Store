@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.I180564_i180729_i180634" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.PCStore" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryGreen</item>
         <item name="colorPrimaryVariant">@color/primaryGreen</item>
