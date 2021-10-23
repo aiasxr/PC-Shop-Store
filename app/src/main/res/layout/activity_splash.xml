@@ -4,9 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/splashbg"
     tools:context=".SplashActivity"
     >
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome!"
+        android:textAllCaps="true"
+        android:fontFamily="@font/avenirblack"
+        android:textColor="@color/darkyellow"
+        android:layout_marginTop="590dp"
+        android:layout_marginStart="30dp"
+        android:textSize="16sp"
+        android:id="@+id/welcomeText"
+        android:layout_above="@id/siteName"
+        />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remotely.io"
+        android:fontFamily="@font/avenirblack"
+        android:textColor="@color/white"
+        android:layout_marginStart="30dp"
+        android:textSize="37sp"
+        android:layout_above="@id/statement"
+        android:id="@+id/siteName"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We serve you with best gadgets for your home workspace"
+        android:fontFamily="@font/avenirblack"
+        android:textColor="#656565"
+        android:layout_marginStart="30dp"
+        android:textSize="18sp"
+        android:layout_above="@id/BrowseButton"
+        android:id="@+id/statement"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/darkyellow"
+        android:id="@+id/BrowseButton"
+        android:textColor="@color/black"
+        android:fontFamily="@font/avenirblack"
+        android:textSize="17sp"
+        android:text="Browse Shop"
+        android:background="@drawable/button"
+        android:layout_margin="20dp"
+        android:layout_above="@id/login"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login"
+        android:text="Log In"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/avenirblack"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        />
 
 </RelativeLayout>
