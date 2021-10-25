@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PCStore">
         <activity
+            android:name=".SignUpActivity"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity"
-            android:exported="true">
-        </activity>
-        <activity android:name=".SplashActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

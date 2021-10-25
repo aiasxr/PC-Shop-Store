@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "641126251083",
+    "project_id": "pc-store-4e657",
+    "storage_bucket": "pc-store-4e657.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641126251083:android:1163cf8fe94d44b9626bce",
+        "android_client_info": {
+          "package_name": "com.softwareengineering.pcstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641126251083-utknqe9agf475au06kuul1uohqjub80k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVVMOXMmNMx6saAFrHDPKWfUltdJiUaAw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641126251083-utknqe9agf475au06kuul1uohqjub80k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

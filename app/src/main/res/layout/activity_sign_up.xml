@@ -4,22 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".SignUpActivity">
 
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome Back"
-        android:textSize="30sp"
+        android:text="Welcome to "
+        android:textSize="25sp"
         android:layout_marginStart="20sp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/avenirblack"
         android:textColor="@color/black"
         />
 
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remotely.io"
+        android:textSize="25sp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/avenirblack"
+        android:textColor="@color/darkyellow"
+        android:layout_toRightOf="@id/welcomeText"
+        />
+
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/loginGoogle"
+        android:id="@+id/SignUpGoogle"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@id/welcomeText"
@@ -28,30 +40,30 @@
         android:layout_marginEnd="20sp"
         android:layout_marginBottom="20sp"
         android:background="@drawable/button2"
-        android:text="Login with Google" />
+        android:text="Sign Up with Google" />
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/loginFB"
+        android:id="@+id/SignUpFB"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@id/loginGoogle"
+        android:layout_below="@id/SignUpGoogle"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:layout_marginBottom="20sp"
         android:background="@drawable/button2"
-        android:text="Login with Facebook" />
+        android:text="Sign Up with Facebook" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/or"
-        android:layout_below="@id/loginFB"
+        android:layout_below="@id/SignUpFB"
         android:layout_centerHorizontal="true"
         android:text="OR"
         android:fontFamily="@font/avenirblack"
         />
-    
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,12 +81,12 @@
         android:layout_height="50dp"
         android:layout_below="@id/EmailText"
         android:layout_marginStart="20dp"
-        android:hint="example@google.com"
-        android:padding="10dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/credentialsboxbg"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:hint="example@google.com"
+        android:inputType="textEmailAddress"
+        android:padding="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -83,7 +95,7 @@
         android:textSize="15sp"
         android:text="Password"
         android:layout_margin="20dp"
-        android:layout_below="@+id/editTextTextEmailAddress"
+        android:layout_below="@+id/editTextPhone"
         android:id="@+id/PasswordText"
         />
 
@@ -111,7 +123,7 @@
         android:src="@drawable/ic_twotone_remove_red_eye_24" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/CustomLogin"
+        android:id="@+id/CustomSignUp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@id/editTextTextPassword"
@@ -120,30 +132,46 @@
         android:layout_marginEnd="20sp"
         android:layout_marginBottom="20sp"
         android:background="@drawable/button"
-        android:text="Login" />
+        android:text="Sign Up" />
+
 
     <TextView
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/forgotPass"
-        android:text="Forgot Password?"
-        android:fontFamily="@font/avenirblack"
-        android:textSize="18sp"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/signUp"
-        android:text="Sign up"
-        android:fontFamily="@font/avenirblack"
-        android:textSize="18sp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/avenirblack"
+        android:text="Login"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/avenirblack"
+        android:textSize="15sp"
+        android:text="Phone Number"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/editTextTextEmailAddress"
+        android:id="@+id/PhoneText"
         />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:padding="10dp"
+        android:background="@drawable/credentialsboxbg"
+        android:hint="Phone Number"
+        android:layout_below="@id/PhoneText"
+        android:ems="10"
+        android:inputType="phone" />
 
 
 </RelativeLayout>
