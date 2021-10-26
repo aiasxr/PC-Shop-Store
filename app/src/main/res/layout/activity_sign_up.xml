@@ -43,22 +43,12 @@
         android:text="Sign Up with Google" />
 
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/SignUpFB"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@id/SignUpGoogle"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        android:layout_marginBottom="20sp"
-        android:background="@drawable/button2"
-        android:text="Sign Up with Facebook" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/or"
-        android:layout_below="@id/SignUpFB"
+        android:layout_below="@id/SignUpGoogle"
         android:layout_centerHorizontal="true"
         android:text="OR"
         android:fontFamily="@font/avenirblack"
@@ -106,11 +96,12 @@
         android:layout_below="@id/PasswordText"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:padding="10dp"
-
+        android:layout_marginBottom="50dp"
         android:background="@drawable/credentialsboxbg"
+
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:padding="10dp" />
 
     <ImageButton
         android:id="@+id/showPass"
