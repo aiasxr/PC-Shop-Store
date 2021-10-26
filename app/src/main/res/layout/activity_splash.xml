@@ -35,30 +35,31 @@
         />
 
     <TextView
+        android:id="@+id/statement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="We serve you with best gadgets for your home workspace"
-        android:fontFamily="@font/avenirblack"
-        android:textColor="#656565"
-        android:layout_marginStart="30dp"
-        android:textSize="18sp"
         android:layout_above="@id/BrowseButton"
-        android:id="@+id/statement"
-        />
+        android:layout_marginStart="30dp"
+        android:fontFamily="@font/avenirblack"
+        android:text="We serve you with best gadgets for your home workspace"
+        android:textColor="#656565"
+        android:textSize="18sp" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BrowseButton"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:backgroundTint="@color/darkyellow"
-        android:id="@+id/BrowseButton"
-        android:textColor="@color/black"
-        android:fontFamily="@font/avenirblack"
-        android:textSize="17sp"
-        android:text="Browse Shop"
-        android:background="@drawable/button"
-        android:layout_margin="20dp"
         android:layout_above="@id/login"
-        />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button"
+        android:backgroundTint="@color/darkyellow"
+        android:fontFamily="@font/avenirblack"
+        android:text="Browse Shop"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
 
     <TextView
         android:layout_width="wrap_content"
