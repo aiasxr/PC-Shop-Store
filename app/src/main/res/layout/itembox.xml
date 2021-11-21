@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#B3EFEFEF"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    >
+
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/productImage"
+        android:layout_toEndOf="@id/productImage"
+        android:text="Product Name"
+        android:fontFamily="@font/avenirblack"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/productRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/productName"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@id/productImage"
+        android:fontFamily="@font/avenirblack"
+        android:text="3.8"
+        android:textColor="@color/black"
+        android:textSize="19sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_star_24"
+        android:layout_toEndOf="@id/productRating"
+        android:layout_alignTop="@id/productRating"
+        />
+
+    <TextView
+        android:id="@+id/productPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/productRating"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@id/productImage"
+        android:text="48$"
+        android:fontFamily="@font/avenirblack"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        />
+
+    <ImageButton
+        android:id="@+id/add_to_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_add_shopping_cart_24"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/productName"
+        android:layout_margin="20dp"
+        android:background="#00FFFFFF"
+        />
+
+</RelativeLayout>

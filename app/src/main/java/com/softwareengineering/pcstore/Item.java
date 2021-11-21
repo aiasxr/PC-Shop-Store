@@ -5,15 +5,18 @@ import android.net.Uri;
 public class Item {
 
     private String id, name , price , brand , rating ;
-    Uri profile;
+    String profile;
 
-    public Item(String id, String name, String price, String brand, String rating, Uri profile) {
+    public Item(String id, String name, String price, String brand, String rating, String profile) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.brand = brand;
         this.rating = rating;
         this.profile = profile;
+    }
+    public Item() {
+
     }
 
     public String getId() {
@@ -56,11 +59,11 @@ public class Item {
         this.rating = rating;
     }
 
-    public Uri getProfile() {
+    public String getProfile() {
         return profile;
     }
 
-    public void setProfile(Uri profile) {
+    public void setProfile(String profile) {
         this.profile = profile;
     }
 }

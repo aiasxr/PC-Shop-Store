@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "641126251083",
+    "firebase_url": "https://pc-store-4e657-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "pc-store-4e657",
     "storage_bucket": "pc-store-4e657.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "641126251083-i1f15cfdvqujeak01dnkn62c6faho3fi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.softwareengineering.pcstore",
+            "certificate_hash": "854b2935b2f4e5192a0a8a21d7b7dc778a2cccf4"
+          }
+        },
         {
           "client_id": "641126251083-utknqe9agf475au06kuul1uohqjub80k.apps.googleusercontent.com",
           "client_type": 3
