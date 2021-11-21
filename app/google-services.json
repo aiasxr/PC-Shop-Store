@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "641126251083-i1f15cfdvqujeak01dnkn62c6faho3fi.apps.googleusercontent.com",
+          "client_id": "641126251083-k0aomp4ik1ln78udvoil582ip7ifd672.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.softwareengineering.pcstore",
-            "certificate_hash": "854b2935b2f4e5192a0a8a21d7b7dc778a2cccf4"
+            "certificate_hash": "371f84c9f3a243338389c453f7c1d12fa84a4597"
           }
         },
         {

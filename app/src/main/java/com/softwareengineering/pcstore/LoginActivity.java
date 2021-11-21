@@ -98,9 +98,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void loginG(){
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
-        Intent toHome=new Intent(LoginActivity.this,Home.class);
-        startActivity(toHome);
-        finish();
+
     }
 
     @Override
@@ -115,12 +113,20 @@ public class LoginActivity extends AppCompatActivity {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
                 firebaseAuthWithGoogle(account.getIdToken());
+                toHomeScreen();
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
             }
         }
     }
+
+    public void toHomeScreen(){
+        Intent toHome=new Intent(LoginActivity.this,Home.class);
+        startActivity(toHome);
+        finish();
+    }
+
 
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
