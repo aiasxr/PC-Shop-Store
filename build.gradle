@@ -3,6 +3,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.3'
@@ -12,18 +13,16 @@ buildscript {
     }
 }
 
-
 allprojects {
     // ...
 
     repositories {
         // Check that you have the following line (if not, add it):
         google()  // Google's Maven repository
+        maven { url "https://jitpack.io" }
         // ...
     }
 }
-
-
 
 task clean(type: Delete) {
     delete rootProject.buildDir

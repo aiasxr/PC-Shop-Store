@@ -121,12 +121,21 @@ public class SignUpActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            toCreateProfile();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                         }
                     }
                 });
+    }
+
+    public void toCreateProfile(){
+        Intent intent=new Intent(SignUpActivity.this,CreateProfileActivity.class);
+        intent.putExtra("id",mAuth.getCurrentUser().getUid());
+        intent.putExtra("email",mAuth.getCurrentUser().getEmail());
+        startActivity(intent);
+        finish();
     }
 
     private void signup() {
@@ -138,6 +147,11 @@ public class SignUpActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            Intent intent=new Intent(SignUpActivity.this,CreateProfileActivity.class);
+                            intent.putExtra("id",mAuth.getCurrentUser().getUid());
+                            intent.putExtra("email",eMail.getText().toString());
+                            startActivity(intent);
+                            finish();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());

@@ -10,25 +10,23 @@
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to "
-        android:textSize="25sp"
         android:layout_marginStart="20sp"
         android:layout_marginTop="100dp"
         android:fontFamily="@font/avenirblack"
+        android:text="Welcome to "
         android:textColor="@color/black"
-        />
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Remotely.io"
-        android:textSize="25sp"
         android:layout_marginTop="100dp"
-        android:fontFamily="@font/avenirblack"
-        android:textColor="@color/darkyellow"
         android:layout_toRightOf="@id/welcomeText"
-        />
+        android:fontFamily="@font/avenirblack"
+        android:text="Remotely.io"
+        android:textColor="@color/darkyellow"
+        android:textSize="25sp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/SignUpGoogle"
