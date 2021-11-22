@@ -5,42 +5,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#B3FAFAFA"
     tools:context=".Home">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/gradient_top_bar"
+        />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profilepic"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/dp" />
 
-
-
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/cart"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/cart"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_outline_shopping_cart_24"
+        android:layout_alignTop="@id/profilepic"
         android:layout_alignParentEnd="true"
-        android:scaleType="centerInside"
-            />
-
+        android:layout_marginEnd="20dp"
+        />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/search"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_search_24"
+        android:layout_alignTop="@id/profilepic"
+        android:layout_toStartOf="@id/cart"
+        android:layout_marginEnd="20dp"
+        />
 
     <TextView
         android:id="@+id/textPopular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:text="Popular Now"
         android:layout_below="@id/profilepic"
+        android:layout_margin="20dp"
         android:fontFamily="@font/avenirblack"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:text="Popular Now"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/popularNow"
@@ -51,16 +63,16 @@
         android:src="@drawable/popularitem" />
 
     <TextView
+        android:id="@+id/productS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:text="Products"
-        android:gravity="center_vertical"
-        android:fontFamily="@font/avenirblack"
         android:layout_below="@id/popularNow"
-        android:id="@+id/productS"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/avenirblack"
+        android:gravity="center_vertical"
+        android:text="Products"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
 
     <androidx.recyclerview.widget.RecyclerView

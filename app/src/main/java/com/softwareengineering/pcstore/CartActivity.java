@@ -6,10 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -22,42 +19,32 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Home extends AppCompatActivity {
+public class CartActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     DatabaseReference reference2;
-    itemRVAdapter adapter;
     RecyclerView rv;
     FirebaseAuth mAuth;
-    ArrayList<Item> itemList;
+    CartItemRVAdapter adapter;
+    ArrayList<cartItem> cartItems;
     CircleImageView profilePic;
-    CircleImageView cart;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_cart);
 
         rv = findViewById(R.id.rv);
-        itemList = new ArrayList<Item>();
+        cartItems = new ArrayList<cartItem>();
         profilePic = findViewById(R.id.profilepic);
-        cart = findViewById(R.id.cart);
-
-        cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent toHome=new Intent(Home.this,CartActivity.class);
-                startActivity(toHome);
-            }
-        });
 
         mAuth = FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance("https://pc-store-4e657-default-rtdb.asia-southeast1.firebasedatabase.app");
-        reference=database.getReference("Item");
+        reference=database.getReference("Cart");
         reference2=database.getReference("ProfilesTable");
 
         Query getImg = reference2.orderByChild("email").equalTo(mAuth.getCurrentUser().getEmail());
@@ -83,15 +70,15 @@ public class Home extends AppCompatActivity {
         reference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Item item = snapshot.getValue(Item.class);
-                itemList.add(item);
+                cartItem item = snapshot.getValue(cartItem.class);
+                cartItems.add(item);
                 adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Item item = snapshot.getValue(Item.class);
-                itemList.add(item);
+                cartItem item = snapshot.getValue(cartItem.class);
+                cartItems.add(item);
                 adapter.notifyDataSetChanged();
             }
 
@@ -112,11 +99,9 @@ public class Home extends AppCompatActivity {
         });
 
 
-        adapter = new itemRVAdapter(this, itemList, mAuth);
+        adapter = new CartItemRVAdapter(this, cartItems, mAuth);
         LinearLayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
         rv.setAdapter(adapter);
-
-        Toast.makeText(this, "It goes in here"+adapter.getItemCount(),Toast.LENGTH_SHORT).show();
     }
 }

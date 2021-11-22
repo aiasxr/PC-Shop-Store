@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PCStore">
         <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
             android:name=".CreateProfileActivity"
             android:exported="false" />
         <activity
