@@ -84,7 +84,7 @@ public class CartActivity extends AppCompatActivity {
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
+                adapter.notifyDataSetChanged();
             }
 
             @Override

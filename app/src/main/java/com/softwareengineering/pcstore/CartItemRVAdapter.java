@@ -3,6 +3,7 @@ package com.softwareengineering.pcstore;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +54,7 @@ public class CartItemRVAdapter extends RecyclerView.Adapter<CartItemRVAdapter.My
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.mCartItem = list.get(position);
 
         Query itemFind = reference.orderByChild("id").equalTo(holder.mCartItem.getId());
@@ -82,42 +83,62 @@ public class CartItemRVAdapter extends RecyclerView.Adapter<CartItemRVAdapter.My
 
         holder.price.setText(totalPrice +"$");
         holder.amount.setText(holder.mCartItem.getAmount());
-        holder.removeCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //addItemToCart(holder.mCartItem);
-            }
-        });
-    }
-
-    public void addItemToCart(cartItem item){
-        String mail;
-        mail = mAuth.getCurrentUser().getEmail();
-        System.out.println(mail);
-        Query cart = reference2.orderByChild("email").equalTo(mail);
-        cart.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                boolean checker = true;
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    cartItem cartItem1 = dataSnapshot.getValue(cartItem.class);
-                    System.out.println(mail+"   "+cartItem1.getId());
-                    if(cartItem1.getId().equals(item.getId())){
-                        checker = false;
-                        System.out.println("It goes inside Equal If");
-
-                        System.out.println(mail+"   "+cartItem1.getId());
-                        dataSnapshot.getRef().child("amount").setValue(Integer.toString(Integer.parseInt(cartItem1.getAmount())+1));
+        holder.removeCart.setOnClickListener(v -> {
+            list.remove(position);
+            String mail;
+            mail = mAuth.getCurrentUser().getEmail();
+            System.out.println(mail);
+            Query cart = reference2.orderByChild("email").equalTo(mail);
+            cart.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                        cartItem cartItem1 = dataSnapshot.getValue(cartItem.class);
+                        if(cartItem1.getId().equals(holder.mCartItem.getId())){
+                            dataSnapshot.getRef().removeValue();
+                        }
                     }
                 }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            }
+                }
+            });
         });
 
+
+        holder.amount.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View view, int keyCode, KeyEvent keyevent) {
+                //If the keyevent is a key-down event on the "enter" button
+                if ((keyevent.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    String mail;
+                    mail = mAuth.getCurrentUser().getEmail();
+
+                    String newText = holder.amount.getText().toString();
+                    Query cart = reference2.orderByChild("email").equalTo(mail);
+                    list.remove(position);
+                    cart.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for (DataSnapshot appleSnapshot: snapshot.getChildren()) {
+                                cartItem cartItem1 = appleSnapshot.getValue(cartItem.class);
+                                if(cartItem1.getId().equals(holder.mCartItem.getId())) {
+                                    appleSnapshot.getRef().child("amount").setValue(newText);
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
 
