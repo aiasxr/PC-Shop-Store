@@ -5,16 +5,26 @@ public class cartItem {
     String email;
     String amount;
     String unitPrice;
+    String itemName;
 
-    public cartItem(String id, String email, String amount, String unitPrice) {
+    public cartItem(String id, String itemName ,String email, String amount, String unitPrice) {
         this.id = id;
         this.email = email;
+        this.itemName = itemName;
         this.amount = amount;
         this.unitPrice = unitPrice;
     }
 
     public cartItem() {
 
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
     public String getId() {

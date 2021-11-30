@@ -141,6 +141,24 @@ public class CartItemRVAdapter extends RecyclerView.Adapter<CartItemRVAdapter.My
         });
     }
 
+    public void deleteCart(String mail){
+        Query cart = reference2.orderByChild("email").equalTo(mail);
+        cart.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    dataSnapshot.getRef().removeValue();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        list.clear();
+    }
+
 
     @Override
     public int getItemCount() {

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -19,6 +20,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -68,6 +71,8 @@ public class Home extends AppCompatActivity {
                     Profile profile = appleSnapshot.getValue(Profile.class);
                     System.out.println(profile.getEmail());
                     Picasso.get().load(profile.getDp()).into(profilePic);
+
+
                 }
                 if(snapshot.exists()){
                     System.out.println("exist works");

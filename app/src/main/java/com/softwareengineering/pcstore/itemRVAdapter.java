@@ -50,6 +50,7 @@ public class itemRVAdapter extends RecyclerView.Adapter<itemRVAdapter.MyViewHold
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.mItem = list.get(position);
         Picasso.get().load(holder.mItem.getProfile()).fit().centerCrop().into(holder.img);
+
         holder.price.setText(list.get(position).getPrice());
         holder.name.setText(list.get(position).getName());
         holder.rating.setText(list.get(position).getRating());
@@ -85,6 +86,7 @@ public class itemRVAdapter extends RecyclerView.Adapter<itemRVAdapter.MyViewHold
                     reference2.push().setValue(
                             new cartItem(
                                     item.getId(),
+                                    item.getName(),
                                     mail,
                                     "1",
                                     item.getPrice()

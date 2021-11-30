@@ -30,6 +30,8 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.android.application'
 
 dependencies {
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
@@ -44,6 +46,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.firebase:firebase-database:20.0.2'
     implementation 'com.google.firebase:firebase-storage:20.0.0'
+    implementation files('libs\\activation.jar')
+    implementation files('libs\\additionnal.jar')
+    implementation files('libs\\mail.jar')
     testImplementation 'junit:junit:4.+'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.3.0-beta01'
