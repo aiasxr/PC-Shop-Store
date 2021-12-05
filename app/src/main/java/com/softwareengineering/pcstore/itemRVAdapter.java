@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,14 +24,15 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class itemRVAdapter extends RecyclerView.Adapter<itemRVAdapter.MyViewHolder> {
+public class itemRVAdapter extends RecyclerView.Adapter<itemRVAdapter.MyViewHolder> implements Filterable {
 
 
     FirebaseDatabase database;
     DatabaseReference reference2;
     Context c;
     FirebaseAuth mAuth;
-    ArrayList<Item> list;
+    ArrayList<Item> list,filterList;
+    private FilterProduct filter ;
 
     public itemRVAdapter(Context context, ArrayList<Item> list, FirebaseAuth mAuth){
         c=context;
@@ -37,6 +40,7 @@ public class itemRVAdapter extends RecyclerView.Adapter<itemRVAdapter.MyViewHold
         database=FirebaseDatabase.getInstance();
         reference2=database.getReference("Cart");
         this.mAuth = mAuth;
+        this.filterList = list ;
     }
 
     @NonNull
@@ -107,6 +111,15 @@ public class itemRVAdapter extends RecyclerView.Adapter<itemRVAdapter.MyViewHold
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+
+        if (filter==null){
+            filter = new FilterProduct(this,filterList) ;
+        }
+        return filter;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

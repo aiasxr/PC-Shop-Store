@@ -45,7 +45,7 @@
             android:layout_height="90sp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/round_person"
-            android:src="@drawable/user"
+            android:src="@drawable/ic_outline_camera_alt_24"
             tools:ignore="MissingClass" />
 
         <ImageView
@@ -93,13 +93,13 @@
             android:id="@+id/brandname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/name"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10sp"
             android:fontFamily="serif"
             android:text="Brand Name"
             android:textColor="#FFC107"
             android:textSize="22dp"
-            android:layout_below="@id/name"
             android:textStyle="normal" />
 
         <Button
@@ -132,13 +132,13 @@
             android:id="@+id/pricename"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/brand"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10sp"
             android:fontFamily="serif"
             android:text="Price"
             android:textColor="#FFC107"
             android:textSize="22dp"
-            android:layout_below="@id/brand"
             android:textStyle="normal" />
 
         <EditText
@@ -156,13 +156,13 @@
             android:id="@+id/ratingname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/price"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10sp"
             android:fontFamily="serif"
             android:text="Rating"
             android:textColor="#FFC107"
             android:textSize="22dp"
-            android:layout_below="@id/price"
             android:textStyle="normal" />
 
         <EditText
