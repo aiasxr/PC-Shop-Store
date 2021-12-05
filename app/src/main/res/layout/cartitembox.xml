@@ -22,11 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/productImage"
         android:layout_toEndOf="@id/productImage"
-        android:text="Product Name"
         android:fontFamily="@font/avenirblack"
+        android:text="Product Name"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        />
+        android:textSize="20sp" />
 
 
     <TextView
@@ -47,13 +46,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/productPrice"
         android:layout_alignStart="@id/productName"
+        android:background="@drawable/credentialsboxbg"
+        android:fontFamily="@font/avenirblack"
         android:imeOptions="actionSend"
         android:inputType="text"
         android:maxLines="1"
         android:text="44"
-        android:fontFamily="@font/avenirblack"
         android:textSize="20sp"
-        android:background="@drawable/credentialsboxbg"
 
         />
 

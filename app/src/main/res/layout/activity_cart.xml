@@ -12,8 +12,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@drawable/gradient_top_bar"
-        />
+        android:background="@drawable/gradient_top_bar" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView

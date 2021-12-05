@@ -1,85 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B3FAFAFA"
-    tools:context=".Home">
+    android:background="@color/white"
+    tools:context=".Home"
+    android:orientation="vertical"
+    android:weightSum="10">
 
-    <View
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@drawable/gradient_top_bar"
-        />
+        android:background="@color/black"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"/>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profilepic"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/dp" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/cart"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_outline_shopping_cart_24"
-        android:layout_alignTop="@id/profilepic"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
-        />
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/search"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_baseline_search_24"
-        android:layout_alignTop="@id/profilepic"
-        android:layout_toStartOf="@id/cart"
-        android:layout_marginEnd="20dp"
-        />
-
-    <TextView
-        android:id="@+id/textPopular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profilepic"
-        android:layout_margin="20dp"
-        android:fontFamily="@font/avenirblack"
-        android:text="Popular Now"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/popularNow"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_below="@id/textPopular"
-        android:scaleType="center"
-        android:src="@drawable/popularitem" />
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:orientation="horizontal"
+        android:background="@color/black"
+        android:weightSum="3">
 
-    <TextView
-        android:id="@+id/productS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/popularNow"
-        android:layout_marginLeft="20dp"
-        android:fontFamily="@font/avenirblack"
-        android:gravity="center_vertical"
-        android:text="Products"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilepic"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:src="@drawable/dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"/>
+
+        <ImageView
+            android:id="@+id/add_product1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:src="@drawable/add_new_product"
+            android:scaleType="centerInside"
+            />
+
+        <ImageView
+            android:id="@+id/cart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:src="@drawable/cart"
+            android:scaleType="centerInside"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="0.2"
+        android:background="@drawable/rec1"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+        
+        <TextView
+            android:id="@+id/productTab"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/rec2"
+            android:text="Products"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/orderTab"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Orders"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:layout_weight="0.9"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/searchIcon"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/search"
+            android:drawablePadding="10dp"
+            android:padding="2dp"
+            android:textColorHighlight="@color/white"
+            android:layout_weight="0.2"
+            />
+
+        <EditText
+            android:id="@+id/searchProduct"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:drawablePadding="10dp"
+            android:padding="2dp"
+            android:textColorHighlight="@color/white"
+            android:background="@color/darkyellow"
+            android:hint="  Search"
+            android:layout_weight="1.8"
+            android:layout_margin="5dp"/>
+
+
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="0.2"/>-->
+<!--    -->
+<!--    -->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="0.5"-->
+<!--        android:layout_marginLeft="15dp"-->
+<!--        android:text="Popular Now"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:fontFamily="sans-serif-condensed-light"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/black"/>-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="149dp"-->
+<!--        android:layout_weight="1.8"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:src="@drawable/popularitem" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="0.5"-->
+<!--        android:layout_marginLeft="15dp"-->
+<!--        android:text="Workspaces"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:fontFamily="sans-serif-condensed-light"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/black"/>-->
+
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/productS"
-        tools:listitem="@layout/itembox" />
+        android:layout_height="0dp"
+        android:layout_weight="7.8"
+        android:id="@+id/rv">
+    </androidx.recyclerview.widget.RecyclerView>
 
-</RelativeLayout>
+</LinearLayout>

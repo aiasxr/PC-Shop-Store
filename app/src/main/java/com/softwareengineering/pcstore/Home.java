@@ -1,16 +1,20 @@
 package com.softwareengineering.pcstore;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -20,12 +24,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -38,8 +39,11 @@ public class Home extends AppCompatActivity {
     FirebaseAuth mAuth;
     ArrayList<Item> itemList;
     CircleImageView profilePic;
-    CircleImageView cart;
+    ImageView cart;
+    ImageView add_product1;
+    TextView productTab , orderTab , searchProduct;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +52,48 @@ public class Home extends AppCompatActivity {
         rv = findViewById(R.id.rv);
         itemList = new ArrayList<Item>();
         profilePic = findViewById(R.id.profilepic);
-        cart = findViewById(R.id.cart);
+        cart = findViewById(R.id.cart) ;
+        add_product1 = findViewById(R.id.add_product1) ;
+        productTab = findViewById(R.id.productTab) ;
+        orderTab = findViewById(R.id.orderTab) ;
+        searchProduct = findViewById(R.id.searchProduct) ;
+
+        productTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toHome=new Intent(Home.this,Home.class);
+                startActivity(toHome);
+            }
+        });
+
+        orderTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        searchProduct.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    adapter.getFilter().filter(s);
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,6 +158,14 @@ public class Home extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        add_product1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toAddProduct=new Intent(Home.this, Additem.class);
+                startActivity(toAddProduct);
             }
         });
 
