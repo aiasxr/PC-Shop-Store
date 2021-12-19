@@ -140,14 +140,16 @@ public class Home extends AppCompatActivity {
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Item item = snapshot.getValue(Item.class);
-                itemList.add(item);
-                adapter.notifyDataSetChanged();
+                //Item item = snapshot.getValue(Item.class);
+                //itemList.add(item);
+                //adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
+                Item item = snapshot.getValue(Item.class);
+                itemList.remove(item);
+                adapter.notifyDataSetChanged();
             }
 
             @Override

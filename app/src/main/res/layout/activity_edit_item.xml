@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1C1C1B"
-    tools:context=".Additem">
+    tools:context=".editItem">
 
     <LinearLayout
         android:id="@+id/header"
@@ -25,7 +25,7 @@
             android:layout_marginTop="12dp"
             android:fontFamily="serif"
             android:paddingLeft="20sp"
-            android:text="Add item"
+            android:text="Update Item"
             android:textColor="#FFC107"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -111,7 +111,7 @@
             android:layout_marginTop="10dp"
             android:backgroundTint="#193155"
             android:fontFamily="serif"
-            android:text="Save"
+            android:text="Update Product"
             android:textAllCaps="false"
             android:textSize="20sp"
             android:textStyle="normal" />

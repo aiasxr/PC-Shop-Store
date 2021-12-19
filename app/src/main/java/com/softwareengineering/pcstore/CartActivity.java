@@ -1,17 +1,17 @@
 package com.softwareengineering.pcstore;
 
+import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.os.StrictMode;
-import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -23,9 +23,11 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -192,14 +194,15 @@ public class CartActivity extends AppCompatActivity {
 
         emailBody.append("            <tr>\n" + "            <td style=\"border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:12px 5px;text-align:left;vertical-align:top;word-break:normal\" class=\"tg-0lax\" colspan=\"11\">" + "Total" + "</td>\n" + "            <td style=\"border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:12px 5px;text-align:left;vertical-align:top;word-break:normal\" class=\"tg-0lax\" colspan=\"4\">").append(totalSumPrice).append("$</td>\n").append("            </tr>\n").append("</tbody>\n").append("</table>").append("<h4>Please consider shoping from us in future as well.</h4>");
 
+        String date1 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
         reference3.push().setValue(
                 new Order(
                         orderID,
                         eMail,
+                        date1,
                         totalSumPrice + "$"
                 )
         );
-
 
         adapter.deleteCart(eMail);
 
