@@ -11,6 +11,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
+        android:background="@color/darkyellow"
         android:layout_height="wrap_content">
 
         <TextView
@@ -25,9 +26,9 @@
             android:id="@+id/orderDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
+            android:layout_marginLeft="60dp"
             android:layout_toEndOf="@+id/orderId"
-            android:text="Date: "
+            android:fontFamily="@font/avenirblack"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
@@ -36,12 +37,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/orderId"
+            android:textStyle="italic"
             android:text="Order By: XYZ"
-            android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textColor="@color/purple_500" />
 
         <TextView
             android:id="@+id/orderAmount"
+            android:fontFamily="@font/rubik_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/orderBy"

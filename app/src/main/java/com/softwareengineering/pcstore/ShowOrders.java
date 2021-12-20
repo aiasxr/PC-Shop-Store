@@ -3,8 +3,6 @@ package com.softwareengineering.pcstore;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,41 +28,39 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class Home extends AppCompatActivity {
+public class ShowOrders extends AppCompatActivity {
+
     FirebaseDatabase database;
     DatabaseReference reference;
     DatabaseReference reference2;
-    itemRVAdapter adapter;
+    orderRVAdapter adapter;
     RecyclerView rv;
     FirebaseAuth mAuth;
-    ArrayList<Item> itemList;
+    ArrayList<Order> itemList;
     CircleImageView profilePic;
     ImageView cart;
     ImageView add_product1;
-    TextView productTab , orderTab , searchProduct;
+    TextView productTab , orderTab ;
 
-    ArrayList<Order> orderArrayList;
-    orderRVAdapter adapt ;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_show_orders);
 
         rv = findViewById(R.id.rv);
-        itemList = new ArrayList<Item>();
+        itemList = new ArrayList<Order>();
         profilePic = findViewById(R.id.profilepic);
         cart = findViewById(R.id.cart) ;
         add_product1 = findViewById(R.id.add_product1) ;
         productTab = findViewById(R.id.productTab) ;
         orderTab = findViewById(R.id.orderTab) ;
-        searchProduct = findViewById(R.id.searchProduct) ;
 
         productTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toHome=new Intent(Home.this,Home.class);
+                Intent toHome=new Intent(ShowOrders.this,Home.class);
                 startActivity(toHome);
             }
         });
@@ -72,44 +68,22 @@ public class Home extends AppCompatActivity {
         orderTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toOrder=new Intent(Home.this,ShowOrders.class);
+                Intent toOrder=new Intent(ShowOrders.this,ShowOrders.class);
                 startActivity(toOrder);
-            }
-        });
-
-        searchProduct.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                try {
-                    adapter.getFilter().filter(s);
-                }
-                catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
             }
         });
 
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toHome=new Intent(Home.this,CartActivity.class);
+                Intent toHome=new Intent(ShowOrders.this,CartActivity.class);
                 startActivity(toHome);
             }
         });
 
         mAuth = FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance("https://pc-store-4e657-default-rtdb.asia-southeast1.firebasedatabase.app");
-        reference=database.getReference("Item");
+        reference=database.getReference("Order");
         reference2=database.getReference("ProfilesTable");
 
         Query getImg = reference2.orderByChild("email").equalTo(mAuth.getCurrentUser().getEmail());
@@ -137,7 +111,7 @@ public class Home extends AppCompatActivity {
         reference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Item item = snapshot.getValue(Item.class);
+                Order item = snapshot.getValue(Order.class);
                 itemList.add(item);
                 adapter.notifyDataSetChanged();
             }
@@ -151,7 +125,7 @@ public class Home extends AppCompatActivity {
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                Item item = snapshot.getValue(Item.class);
+                Order item = snapshot.getValue(Order.class);
                 itemList.remove(item);
                 adapter.notifyDataSetChanged();
             }
@@ -170,17 +144,17 @@ public class Home extends AppCompatActivity {
         add_product1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent toAddProduct=new Intent(Home.this, Additem.class);
+                Intent toAddProduct=new Intent(ShowOrders.this, Additem.class);
                 startActivity(toAddProduct);
             }
         });
 
-
-        adapter = new itemRVAdapter(this, itemList, mAuth);
+        adapter = new orderRVAdapter(this , itemList , mAuth );
         LinearLayoutManager lm = new LinearLayoutManager(this);
         rv.setLayoutManager(lm);
         rv.setAdapter(adapter);
 
         Toast.makeText(this, "It goes in here"+adapter.getItemCount(),Toast.LENGTH_SHORT).show();
+
     }
 }

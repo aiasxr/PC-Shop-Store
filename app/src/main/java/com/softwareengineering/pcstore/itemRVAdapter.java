@@ -89,6 +89,7 @@ public class itemRVAdapter extends RecyclerView.Adapter<itemRVAdapter.MyViewHold
 
         //initialize views of bottom sheet !
         ImageView backButton = view.findViewById(R.id.backButton) ;
+        ImageView reviewButton = view.findViewById(R.id.reviewButton) ;
         ImageView deleteButton = view.findViewById(R.id.deleteButton) ;
         ImageView editButton = view.findViewById(R.id.editButton);
         ImageView product_icon = view.findViewById(R.id.product_icon) ;
@@ -114,6 +115,14 @@ public class itemRVAdapter extends RecyclerView.Adapter<itemRVAdapter.MyViewHold
         Picasso.get().load(item.getProfile()).fit().centerCrop().into(product_icon);
 
         bottomSheetDialog.show();
+
+        // review button clicked
+        reviewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         // edit button clicked
         editButton.setOnClickListener(new View.OnClickListener() {

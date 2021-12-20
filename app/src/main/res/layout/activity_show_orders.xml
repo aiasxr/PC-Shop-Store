@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Home"
+    tools:context=".ShowOrders"
     android:orientation="vertical"
     android:weightSum="10">
 
@@ -65,12 +65,11 @@
         android:background="@drawable/rec1"
         android:orientation="horizontal"
         android:layout_marginTop="5dp">
-        
+
         <TextView
             android:id="@+id/productTab"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@drawable/rec2"
             android:text="Products"
             android:textColor="@color/black"
             android:gravity="center"
@@ -80,6 +79,7 @@
             android:id="@+id/orderTab"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:background="@drawable/rec2"
             android:text="Orders"
             android:textColor="@color/black"
             android:gravity="center"
@@ -90,6 +90,7 @@
     <LinearLayout
         android:id="@+id/ser"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="0dp"
         android:layout_margin="5dp"
         android:layout_weight="0.9"
@@ -121,59 +122,59 @@
 
     </LinearLayout>
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="0.2"/>-->
-<!--    -->
-<!--    -->
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_weight="0.2"/>-->
+    <!--    -->
+    <!--    -->
 
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="0.5"-->
-<!--        android:layout_marginLeft="15dp"-->
-<!--        android:text="Popular Now"-->
-<!--        android:gravity="center_vertical"-->
-<!--        android:fontFamily="sans-serif-condensed-light"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textColor="@color/black"/>-->
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_weight="0.5"-->
+    <!--        android:layout_marginLeft="15dp"-->
+    <!--        android:text="Popular Now"-->
+    <!--        android:gravity="center_vertical"-->
+    <!--        android:fontFamily="sans-serif-condensed-light"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:textColor="@color/black"/>-->
 
-<!--    <ImageView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="149dp"-->
-<!--        android:layout_weight="1.8"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        android:src="@drawable/popularitem" />-->
+    <!--    <ImageView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="149dp"-->
+    <!--        android:layout_weight="1.8"-->
+    <!--        android:scaleType="centerCrop"-->
+    <!--        android:src="@drawable/popularitem" />-->
 
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="0.5"-->
-<!--        android:layout_marginLeft="15dp"-->
-<!--        android:text="Workspaces"-->
-<!--        android:gravity="center_vertical"-->
-<!--        android:fontFamily="sans-serif-condensed-light"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textColor="@color/black"/>-->
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_weight="0.5"-->
+    <!--        android:layout_marginLeft="15dp"-->
+    <!--        android:text="Workspaces"-->
+    <!--        android:gravity="center_vertical"-->
+    <!--        android:fontFamily="sans-serif-condensed-light"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:textColor="@color/black"/>-->
 
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7.8"
-        tools:listitem="@layout/itembox"
+        android:layout_weight="8.71"
+        tools:listitem="@layout/row_order"
         android:id="@+id/rv">
     </androidx.recyclerview.widget.RecyclerView>
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="8.75"-->
-<!--        tools:listitem="@layout/row_order"-->
-<!--        android:id="@+id/rv1">-->
-<!--    </androidx.recyclerview.widget.RecyclerView>-->
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_weight="8.75"-->
+    <!--        tools:listitem="@layout/row_order"-->
+    <!--        android:id="@+id/rv1">-->
+    <!--    </androidx.recyclerview.widget.RecyclerView>-->
 
 
 

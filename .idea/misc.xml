@@ -19,6 +19,7 @@
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/drawable/rec1.xml" value="0.13" />
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/drawable/rec2.xml" value="0.13" />
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/drawable/rec3.xml" value="0.17685185185185184" />
+        <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/drawable/review.xml" value="0.20555555555555555" />
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/drawable/round_button.xml" value="0.2203125" />
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/drawable/round_camera.xml" value="0.2203125" />
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/drawable/round_message.xml" value="0.2203125" />
@@ -32,6 +33,7 @@
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/layout/activity_edit_item.xml" value="0.2" />
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/layout/activity_home.xml" value="0.16" />
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/layout/activity_show_orders.xml" value="0.2" />
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/usman/AndroidStudioProjects/PC-Shop-Store/app/src/main/res/layout/bs_product_detail.xml" value="0.22" />

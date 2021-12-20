@@ -37,6 +37,17 @@
             android:foregroundGravity="center"
             android:src="@drawable/ic_baseline_edit_24" />
 
+        <ImageView
+            android:id="@+id/reviewButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_toStartOf="@+id/editButton"
+            android:background="@null"
+            android:foregroundGravity="center"
+            android:src="@drawable/review" />
+
+
         <TextView
             android:id="@+id/nametv"
             android:layout_width="wrap_content"
@@ -64,10 +75,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_below="@+id/product_icon"
         android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:layout_below="@+id/product_icon">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/product_title"
@@ -76,8 +87,9 @@
             android:layout_marginTop="5dp"
             android:text="Product Title"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
 
         <TextView
             android:id="@+id/product_description"
@@ -94,9 +106,8 @@
             android:layout_marginTop="5dp"
             android:text="50$"
             android:textColor="@color/teal_700"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
-
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
