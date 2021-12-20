@@ -120,7 +120,9 @@ public class itemRVAdapter extends RecyclerView.Adapter<itemRVAdapter.MyViewHold
         reviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent( c , addProductReview.class) ;
+                intent.putExtra("ProductId" , id) ;
+                c.startActivity(intent);
             }
         });
 

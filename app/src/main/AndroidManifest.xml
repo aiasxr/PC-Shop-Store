@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PCStore">
         <activity
+            android:name=".addProductReview"
+            android:exported="false" />
+        <activity
             android:name=".ShowOrders"
             android:exported="false" />
         <activity
